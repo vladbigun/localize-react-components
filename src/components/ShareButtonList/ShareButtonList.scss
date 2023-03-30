@@ -1,0 +1,86 @@
+@import "../../styles/fonts";
+
+.lcz-share-container{
+  padding: 12px 0;
+  p{
+    @include november-hebrew(16px);
+    color: #0F3D4C;
+    margin: 0;
+    line-height: 22px;
+    padding: 20px 0;
+
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-delay: 1.6s;
+    animation-name: animation3;
+  }
+  .lcz-share-list{
+    display: flex;
+    & > *:nth-child(1){
+      animation-duration: 0.2s;
+      animation-fill-mode: both;
+      animation-delay: 1.8s;
+      animation-name: animation-translate;
+    }
+    & > *:nth-child(2){
+      animation-duration: 0.2s;
+      animation-fill-mode: both;
+      animation-delay: 2s;
+      animation-name: animation-translate;
+    }
+    & > *:nth-child(3){
+      animation-duration: 0.2s;
+      animation-fill-mode: both;
+      animation-delay: 2.2s;
+      animation-name: animation-translate;
+    }
+    & > *:nth-child(4){
+      animation-duration: 0.2s;
+      animation-fill-mode: both;
+      animation-delay: 2.4s;
+      animation-name: animation-translate;
+    }
+    & > *:nth-child(5){
+      animation-duration: 0.2s;
+      animation-fill-mode: both;
+      animation-delay: 2.6s;
+      animation-name: animation-translate;
+    }
+    .lcz-share-item{
+      //transform: translateY(200px);
+      width: 50px;
+      height: 50px;
+      padding-right: 20px;
+      box-sizing: content-box;
+    }
+    .lcz-share-item-enter {
+      transform: translateY(100vw);
+      opacity: 0;
+    }
+    .lcz-share-item-enter-active {
+      transform: translateY(0px);
+      transition: all 500ms ease-in;
+      opacity: 1;
+    }
+  }
+}
+
+
+@keyframes animation3 {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes animation-translate {
+  0%{
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,134 @@
+@import "../../../styles/input";
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
+$input-transition-duration: .075s;
+
+input.lcz-input {
+    @include reset;
+    @include form-control;
+    transition: background-color $input-transition-duration ease-out, border-color $input-transition-duration ease-out;
+    &:hover,
+    &.lcz-input--hover {
+        &:not(:focus) {
+            background-color: $input-border-color;
+        }
+    }
+
+    &.lcz-input--success:hover:not(:focus) {
+        background-color: var(--green-5);
+    }
+
+    &.lcz-input--error {
+        border-color: var(--salmon-4);
+        color: var(--salmon-darkest);
+        caret-color: var(--salmon-darkest);
+
+        &:focus {
+            border-color: var(--salmon-darkest) !important;
+        }
+
+        &:not(:focus) {
+            background-color: var(--salmon-4);
+        }
+
+        @include placeholder {
+            color: transparent;
+        }
+
+        &:hover,
+        &.lcz-input--hover {
+            &:not(:focus) {
+                background-color: var(--salmon-3);
+            }
+        }
+    }
+
+    &.lcz-input--non-unique {
+        background-color: var(--logo-green);
+        color: white;
+
+        &:hover {
+            background-color: var(--logo-green);
+
+            &:focus {
+                background-color: white;
+            }
+        }
+
+        &:focus {
+            background-color: white;
+            color: var(--logo-blue);
+            border-color: var(--mid-gray);
+        }
+    }
+
+    &.lcz-input--validating {
+        @include thick-border(var(--gray-light));
+        color: var(--mid-gray);
+    }
+}
+
+.lcz-input__wrapper {
+    position: relative;
+
+    @include validation-icons-init;
+
+    // Error state
+    &.lcz-input__wrapper--error {
+        @include validation-icon-error;
+    }
+
+    // Success state
+    &.lcz-input__wrapper--success {
+        @include validation-icon-success;
+    }
+}
+
+.lcz-input__spinner {
+    @include input-right-icon;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        @include input-spinner;
+    }
+
+    &.lcz-input__spinner--show {
+        @include input-right-icon-show;
+
+        &::before {
+            @include input-spinner-start;
+        }
+    }
+}
+.lcz-wrapper__copy-input{
+    display: flex;
+    input.lcz-input{
+        border-radius: calc(#{$input-height} / 2) 0 0 calc(#{$input-height} / 2);
+        &:disabled{
+            opacity: 1;
+        }
+        &:hover{
+            background: #fff;
+        }
+    }
+    .lcz-button__copy{
+        @include november-hebrew(17px);
+        border-radius: 0 calc(#{$input-height} / 2) calc(#{$input-height} / 2) 0;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 200px;
+        color: #fff;
+        background: #0190A3;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            background: #01798A;
+        }
+    }
+}

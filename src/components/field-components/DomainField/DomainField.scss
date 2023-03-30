@@ -1,0 +1,57 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+@import "../../../styles/fonts";
+
+.lcz-domain-field {
+    height: 125px;
+
+    @include mobile {
+        height: 138px;
+    }
+}
+
+.lcz-domain-field__info {
+    @include november-hebrew(12px);
+    line-height: 140%;
+
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.lcz-domain-field__info-domain {
+    color: var(--logo-blue);
+    font-weight: bold;
+}
+
+.lcz-domain-field__info-url {
+    color: var(--mid-gray);
+}
+
+.lcz-domain-field__info-url,
+.lcz-domain-field__info-success,
+.lcz-domain-field__info-fail,
+.lcz-domain-field__info-instruction {
+    display: inline;
+
+    &:not(:first-child) {
+        margin-left: 8px;
+    }
+
+    @include mobile {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+.lcz-domain-field__info-fail {
+    color: var(--salmon-darkest);
+}
+
+.lcz-domain-field__info-success {
+    color: var(--logo-green);
+}
+
+.lcz-domain-field__info-instruction {
+    color: var(--black-gray);
+}

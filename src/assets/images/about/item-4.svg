@@ -1,0 +1,17 @@
+<svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.1016 8.70947V13.9015" stroke="#0F3D4C" stroke-width="2"/>
+<path d="M23.1016 8.70947V13.9015" stroke="#0F3D4C" stroke-width="2"/>
+<path d="M59.376 8.70947V14.2715" stroke="#0F3D4C" stroke-width="2"/>
+<path d="M59.376 8.70947V14.2715" stroke="#0F3D4C" stroke-width="2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1533 49.9071H66.8783V14.5981H15.1533V49.9071Z" stroke="#0F3D4C" stroke-width="2"/>
+<mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="15" y="14" width="52" height="36">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1533 14.5972H66.8793V49.9072H15.1533V14.5972Z" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M78.7667 24.2021L10.1877 59.3961L1.34668 42.1691L69.9257 6.9751L78.7667 24.2021Z" stroke="#0F3D4C" stroke-width="2"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1533 49.9072H66.8793V14.5972H15.1533V49.9072Z" stroke="#0F3D4C" stroke-width="2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1533 49.9071H66.8783V14.5981H15.1533V49.9071Z" stroke="#0F3D4C" stroke-width="2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.86035 7.614H75.4924V1H1.86035V7.614Z" stroke="#0F3D4C" stroke-width="2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.90039 75.447H8.51439V1.04102H1.90039V75.447Z" stroke="#0F3D4C" stroke-width="2"/>
+</svg>

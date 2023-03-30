@@ -1,0 +1,37 @@
+@import "../../styles/input";
+@import "../../styles/colors";
+@import "../../styles/fonts";
+@import "../../styles/mixins";
+
+$submit-min-width-desktop: 250px;
+$disabled-color: #aeaeae;
+
+button.lcz-button {
+    @include reset;
+    height: $input-height;
+    width: $submit-min-width-desktop;
+    padding: 0 35px;
+    @include november-hebrew(17px);
+    border-radius: calc(#{$input-height} / 2);
+    background-color: var(--logo-blue);
+    border: 1px solid var(--logo-blue);
+    color: white;
+    cursor: pointer;
+
+    transition: all .25s ease-out;
+
+    &.lcz-button--inverted {
+        background-color: white;
+        border-color: white;
+        color: var(--logo-blue);
+    }
+
+    &:disabled,
+    &.lcz-button--disabled {
+        background-color: white;
+        border-color: $disabled-color;
+        color: $disabled-color;
+        opacity: .5;
+        cursor: default;
+    }
+}

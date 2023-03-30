@@ -1,0 +1,119 @@
+@import "../../../styles/input";
+
+.lcz-dropdown {
+  @include reset;
+  @include form-control;
+  cursor: pointer;
+  padding-right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+
+  @include validation-icons-init;
+
+  &.lcz-dropdown--success {
+    @include validation-icon-success(false);
+  }
+
+  &.lcz-dropdown--error {
+    @include validation-icon-error(false);
+  }
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--green-4);
+  }
+}
+
+.lcz-dropdown__value-container {
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  & > * {
+    padding: 0!important;
+    margin: 0!important;
+    display: flex!important;
+  }
+}
+#react-select-2-placeholder{
+  position: absolute;
+}
+.lcz-dropdown__single-value {
+  // Fix issue with DummyInput in react-select causing control area to overflow its borders
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.lcz-dropdown__indicators-container {
+  flex: 0 0 $input-right-margin;
+  display: flex;
+}
+
+.lcz-dropdown__dropdown-indicator {
+  flex: 1 1 auto;
+  background: url("../../../assets/images/down-arrow.svg") no-repeat calc(#{$input-right-margin} - 34px) center /10px 6px;
+  opacity: 1;
+  will-change: opacity, background-size;
+  transition: all $validation-icon-transition-duration ease-out;
+
+  &.lcz-dropdown__dropdown-indicator--hide {
+    opacity: 0;
+    background-size: 0 0;
+  }
+}
+
+.lcz-dropdown__menu > div > .ReactVirtualized__List{
+  @include reset;
+  width: 100%;
+  z-index: 10;
+  max-height: $input-height*5;
+  scroll-behavior: smooth;
+  overflow: hidden!important;
+  overflow-y: overlay!important;
+  position: absolute!important;
+  background: #fff;
+}
+
+.lcz-dropdown__menu > div > .ReactVirtualized__List::-webkit-scrollbar {
+  width: 14px;
+  background-color: transparent;
+  scroll-margin: 10px;
+}
+
+.lcz-dropdown__menu > div > .ReactVirtualized__List::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  width: 8px;
+  border: solid 4px transparent;
+  box-shadow: inset 0 0 10px 10px #DEEBC6;
+}
+
+.lcz-dropdown__menu-list {
+  background-color: white;
+
+}
+.lcz-dropdown__menu .flat-virtualized-item .fast-option {
+  display: flex;
+  align-items: center;
+}
+.lcz-dropdown__menu .flat-virtualized-item .fast-option .lcz-label{
+  line-height: 29px;
+}
+.lcz-dropdown__menu .flat-virtualized-item .fast-option-selected, .lcz-dropdown__menu .flat-virtualized-item .fast-option:hover{
+  background: #F7FAF1;
+}
+.lcz-dropdown__menu .flat-virtualized-item .fast-option-focused {
+  background: unset;
+}
+
+.lcz-dropdown__menu .flat-virtualized-item {
+  @include november-hebrew(18px);
+  color: var(--logo-blue);
+  cursor: pointer;
+  border: 1px solid rgba(214, 230, 184, 0.8);
+  border-top: none;
+
+  &.lcz-dropdown__option--focus {
+    background-color: var(--green-6);
+  }
+}

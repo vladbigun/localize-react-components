@@ -1,0 +1,17 @@
+@import "../../styles/mixins";
+
+.lcz-collapsible {
+    @include reset;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    will-change: height, opacity;
+    transition-property: height, opacity;
+    transition-timing-function: ease-out;
+}
+
+.lcz-collapsible__content {
+    @include reset;
+    flex: 0 0 auto;
+}

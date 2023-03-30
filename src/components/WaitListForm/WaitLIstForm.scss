@@ -1,0 +1,49 @@
+@import "../../styles/mixins";
+@import "../../styles/input";
+
+.lcz-form {
+    @include reset;
+    max-width: 550px;
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (max-width: 600px) {
+        padding: 0 30px;
+    }
+}
+
+.lcz-form__section {
+    @include reset;
+}
+
+.lcz-form__submit-row {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.lcz-form__checking{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 45px;
+    margin: 0 auto;
+    max-width: 90px;
+    & .lcz-form__checking-spinner{
+        width: 20px;
+        height: 20px;
+        &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            @include input-spinner;
+            @include input-spinner-start;
+        }
+    }
+    & .lcz-form__checking-text{
+        @include november-hebrew(12px);
+        color: var(--logo-blue);
+        line-height: 17px;
+    }
+}

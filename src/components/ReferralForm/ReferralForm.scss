@@ -1,0 +1,145 @@
+@import "../../styles/mixins";
+@import "../../styles/input";
+
+.lcz-referral-form {
+    @include reset;
+    max-width: 523px;
+    display: block;
+    position: relative;
+    .button-generate-pc{
+        display: block;
+        @media (max-width: 900px) {
+            &{
+                display: none;
+            }
+        }
+    }
+    .button-generate-mobile{
+        display: none;
+        @media (max-width: 900px) {
+            &{
+                display: block;
+            }
+        }
+    }
+    .lcz-button--success{
+        animation-duration: 1.4s;
+        animation-fill-mode: both;
+        position: absolute;
+        animation-name: animation2;
+        @media (max-width: 900px) {
+            animation: unset;
+            display: none;
+        }
+    }
+    .lcz-link-field__wrapper .lcz-share-button{
+        background: #0190A3;
+        border-radius: calc(#{$input-height} / 2);
+        height: #{$input-height};
+        justify-content: center;
+        align-items: center;
+        display: none;
+        color: #fff;
+        @include november-hebrew(17px);
+        line-height: 24px;
+        cursor: pointer;
+        @media (max-width: 900px) {
+            & {
+                display: flex;
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        .lcz-link-field__wrapper .lcz-form-group{
+            display: none;
+        }
+    }
+}
+.lcz-referral-form .lcz-form__section {
+    @include reset;
+}
+.lcz-referral-form .lcz-form__submit-row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    & > .lcz-button {
+        background: #0190A3;
+        border: unset;
+        width: unset;
+        min-width: 148px;
+        font-size: 17px;
+        padding: 0 21px;
+        @media (max-width: 900px) {
+            & {
+                width: 100%;
+            }
+        }
+    }
+    button.lcz-button:disabled, button.lcz-button.lcz-button--disabled {
+        background-color: #EEEFF2;
+        border-color: #aeaeae;
+        color: #A9AEB8;
+        opacity: 0.5;
+        cursor: default;
+    }
+    button.lcz-button.lcz-button--disabled-loading{
+        background-color: #01798A;
+        opacity: 1;
+        color: #fff;
+    }
+    @media (max-width: 900px) {
+        & > .lcz-button {
+            //max-width: unset;
+            //width: 100%;
+        }
+    }
+}
+
+
+.lcz-referral-form .lcz-form__checking{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45px;
+    margin: 0 auto;
+    max-width: 90px;
+    & .lcz-form__checking-spinner{
+        width: 20px;
+        height: 20px;
+        &::before {
+            content: "";
+            filter: brightness(0) invert(1);
+            display: block;
+            width: 20px;
+            height: 20px;
+            @include input-spinner;
+            @include input-spinner-start;
+        }
+    }
+    & .lcz-form__checking-text{
+        @include november-hebrew(12px);
+        color: var(--logo-blue);
+        line-height: 17px;
+    }
+}
+
+@keyframes animation2 {
+    0%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    70%{
+        transform: translateX(380px);
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        display: none;
+        opacity: 0;
+        z-index: -1;
+        transform: translateX(380px);
+    }
+}

@@ -1,0 +1,94 @@
+@import "../../styles/fonts";
+
+.header_title {
+    padding: 16px 0;
+}
+
+.header_title_text {
+    padding-left: 25px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.header_title_text a {
+    text-decoration: none;
+    color: #103D4C;
+}
+
+.singup_header_section{
+    background: #9BB36B;
+    position: relative;
+}
+
+.signup_header_container {
+    //max-width: 1440px;
+    position: relative;
+    margin: 0 auto 100px;
+    padding: 120px 30px 0 30px;
+    background: #9BB36B;
+}
+
+.steps_form_title_text {
+    margin-top: 25px;
+    padding-bottom: 120px;
+    max-width: 1120px;
+    margin: 0 auto;
+    font-family: "montHeavy", dav, arial, sans-serif;
+}
+
+.steps_form_title_text h1 {
+    font-size: 60px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 70px;
+    letter-spacing: normal;
+    color: #fff;
+    font-family: "montHeavy", dav, arial, sans-serif;
+}
+.steps_form_title_text span {
+    @include november-hebrew(25px, 400);
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 40px;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.steps_form_img { 
+    width: 32%;
+    max-width: 650px !important;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.steps_form_img_pc {
+    right: 0%;
+    bottom: -18%;
+}
+
+@media (max-width: 600px) {
+    .steps_form_title_text h1   {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 25px;
+        line-height: 35px;
+        /* or 140% */
+        letter-spacing: -0.02em;
+    }
+    .steps_form_title_text span {
+        @include november-hebrew(18px);
+        line-height: 28px;
+    }
+    .steps_form_img_pc {
+        bottom: -6%;
+    }
+    .signup_header_container {
+        padding: 60px 30px 0 30px;
+    }
+    .steps_form_title_text {
+        padding-bottom: 60px;
+    }
+}

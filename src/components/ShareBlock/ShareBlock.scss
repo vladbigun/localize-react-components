@@ -1,0 +1,65 @@
+@import "../../styles/fonts";
+
+.lcz-share-wrapper {
+  padding-bottom: 20px;
+  .lcz-input{
+    width: calc(100% - 200px);
+  }
+  .lcz-pc-share{
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: animation-width;
+    display: block;
+    .lcz-button{
+      width: 200px;
+    }
+  }
+  .lcz-mobile-share{
+    display: none;
+    .lcz-button {
+      background: #0190A3;
+      border: unset;
+      width: 100%;
+    }
+  }
+  .lcz-link-HQ {
+    padding-top: 44px;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-delay: 2.2s;
+    animation-name: animation4;
+    & > a {
+      @include november-hebrew(18px);
+      line-height: 22px;
+      color: #0190A3;
+      padding-top: 56px;
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .lcz-pc-share {
+      display: none;
+    }
+    .lcz-mobile-share{
+      display: block;
+    }
+  }
+}
+
+@keyframes animation4 {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes animation-width {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 523px;
+  }
+}

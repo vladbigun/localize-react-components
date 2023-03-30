@@ -1,0 +1,25 @@
+@mixin november-hebrew($font-size: inherit, $font-weight: normal) {
+    font-family: 'novemberHebrew', sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+}
+@mixin mont-heavy($font-size: inherit, $font-weight: normal) {
+    font-family: "montHeavy", dav, arial, sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+}
+
+@mixin mont-regular($font-size: inherit, $font-weight: normal) {
+    font-family: "montRegular", sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+}

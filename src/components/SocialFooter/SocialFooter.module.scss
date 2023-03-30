@@ -1,0 +1,33 @@
+@import "../../styles/fonts";
+.wrapper{
+  padding: 0 38px;
+}
+.container{
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  max-width: 550px;
+  margin: 0 auto;
+}
+.social{
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  &:last-child{
+    margin-right: unset;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.copyright{
+  color: #6B727F;
+  text-decoration: unset;
+  @include november-hebrew(13px);
+  line-height: 18px;
+  padding-right: 16px;
+  &:visited{
+    color: #6B727F;
+  }
+}

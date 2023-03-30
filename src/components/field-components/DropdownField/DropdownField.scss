@@ -1,0 +1,82 @@
+@import "../../../styles/input";
+
+.lcz-dropdown {
+    @include reset;
+    @include form-control;
+    cursor: pointer;
+
+    padding-right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+
+    @include validation-icons-init;
+
+    &.lcz-dropdown--success {
+        @include validation-icon-success(false);
+    }
+
+    &.lcz-dropdown--error {
+        @include validation-icon-error(false);
+    }
+
+    &:hover,
+    &:focus-within {
+        border-color: var(--green-4);
+    }
+}
+
+.lcz-dropdown__value-container {
+    flex: 1 1 auto;
+}
+
+.lcz-dropdown__single-value {
+    // Fix issue with DummyInput in react-select causing control area to overflow its borders
+    display: inline-block;
+}
+
+.lcz-dropdown__indicators-container {
+    flex: 0 0 $input-right-margin;
+    display: flex;
+}
+
+.lcz-dropdown__dropdown-indicator {
+    flex: 1 1 auto;
+    background: url("../../../assets/images/down-arrow.svg") no-repeat calc(#{$input-right-margin} - 34px) center /10px 6px;
+    opacity: 1;
+    will-change: opacity, background-size;
+    transition: all $validation-icon-transition-duration ease-out;
+
+    &.lcz-dropdown__dropdown-indicator--hide {
+        opacity: 0;
+        background-size: 0 0;
+    }
+}
+
+.lcz-dropdown__menu {
+    @include reset;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.lcz-dropdown__menu-list {
+    background-color: white;
+}
+
+.lcz-dropdown__option {
+    @include reset;
+    @include november-hebrew(18px);
+    color: var(--logo-blue);
+    height: $input-height;
+    padding: 0 23px;
+    display: flex;
+    align-items: center;
+    background-color: var(--gray-light);
+    cursor: pointer;
+
+    &.lcz-dropdown__option--focus {
+        background-color: var(--green-6);
+    }
+}

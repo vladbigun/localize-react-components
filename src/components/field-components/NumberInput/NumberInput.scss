@@ -1,0 +1,30 @@
+@import "../../../styles/fonts";
+@import "../../../styles/input";
+
+.lcz-number-input-wrapper{
+    position: relative;
+    .lcz-number-input{
+        box-sizing: border-box;
+        @include form-control;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    .lcz-number-input-buttons{
+        //pointer-events: none;
+        cursor: pointer;
+        width: 31px;
+        height: 100%;
+        background: var(--green-3);
+        position: absolute;
+        right: 0;
+        top: 0;
+        .lcz-input-button{
+            height: 50%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}

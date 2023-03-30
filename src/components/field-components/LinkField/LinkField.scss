@@ -1,0 +1,35 @@
+@import "../../../styles/input";
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
+.lcz-link-field__wrapper{
+  display: flex;
+  max-width: 523px;
+  .lcz-input{
+    border-radius: calc(#{$input-height} / 2) 0 0 calc(#{$input-height} / 2);
+  }
+  .lcz-button{
+    background: #0190A3;
+    border: unset;
+    border-radius: 0 calc(#{$input-height} / 2) calc(#{$input-height} / 2) 0;
+  }
+  .lcz-container-mobile{
+    display: none;
+    width: 100%;
+    .lcz-button{
+      width: 100%;
+      border-radius: 30px;
+    }
+  }
+  .lcz-container-pc{
+    display: flex;
+  }
+  @media (max-width: 900px) {
+    .lcz-container-mobile{
+      display: block;
+    }
+    .lcz-container-pc{
+      display: none;
+    }
+  }
+}

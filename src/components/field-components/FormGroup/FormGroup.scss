@@ -1,0 +1,55 @@
+@import "../../../styles/mixins";
+@import "../../../styles/fonts";
+@import "../../../styles/colors";
+
+$error-animation-duration: .125s;
+
+.lcz-form-group {
+    @include reset;
+    width: 100%;
+    min-height: 119px;
+}
+
+.lcz-form-group__label {
+    @include reset;
+    @include november-hebrew(12px);
+    line-height: 140%;
+    color: var(--black-gray);
+    display: block;
+    padding-bottom: 6px;
+}
+
+.lcz-form-group__error {
+    @include reset;
+    display: block;
+    padding-top: 9px;
+    //clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    @include november-hebrew(12px);
+    color: var(--salmon-darkest);
+    //opacity: 0;
+
+    // Just in case, for hardware acceleration of animation
+    //transform: translate3d(0, -10px, 0);
+    will-change: height, clip-path, opacity, transform;
+    transition: all $error-animation-duration ease-out;
+
+    // Fix error label overlapping the control
+    position: relative;
+    z-index: -1;
+
+    &.lcz-form-group__error--show {
+        height: 30px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.lcz-form-group__info {
+    //margin-top: -20px;
+}
+
+.lcz-form-group__info-label {
+    display: block;
+    padding-top: 10px;
+}

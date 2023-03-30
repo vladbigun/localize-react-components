@@ -1,0 +1,124 @@
+@import "fonts";
+@import "colors";
+@import "mixins";
+
+$input-height: 56px;
+$input-border-color: #ececec;
+$input-right-margin: 51px;
+
+@mixin thick-border($border-color) {
+    border: 3px solid $border-color;
+    padding: 0 49px 0 20px;
+    line-height: calc(#{$input-height - 6px});
+}
+
+@mixin form-control {
+    @include november-hebrew(18px);
+    width: 100%;
+    border: 1px solid $input-border-color;
+    border-radius: 0;
+    background: #ffffff;
+    padding: 0 $input-right-margin 0 22px;
+    height: $input-height;
+    line-height: calc(#{$input-height} - 2px);
+    color: var(--logo-blue);
+    caret-color: var(--logo-blue);
+    transition: none;
+
+    @include placeholder {
+        @include november-hebrew;
+        color: #ececec;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        @include thick-border(var(--green-3));
+
+        &.ui-selectmenu-button {
+            border-width: 1px;
+            padding: 0 51px 0 22px;
+            line-height: calc(#{$input-height} - 2px);
+        }
+    }
+}
+
+$validation-icon-transition-duration: .25s;
+
+@mixin input-right-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform-origin: 50% 50%;
+    transform: translate(50%, -50%) scale(0);
+    transition: transform $validation-icon-transition-duration ease-out, opacity $validation-icon-transition-duration ease-out;
+    opacity: 0;
+}
+
+@mixin validation-icons-init {
+    // Error/success icons initial state
+    &:before,
+    &:after {
+        display: block;
+        content: "";
+        @include input-right-icon;
+    }
+
+    &:after {
+        background: url('../assets/images/success.svg') no-repeat;
+    }
+
+    &:before {
+        background: url('../assets/images/error.svg') no-repeat -2px -2px;
+    }
+}
+
+@mixin input-right-icon-show {
+    transform: translate(50%, -50%) scale(1);
+    opacity: 1;
+}
+
+@mixin validation-icon-error($hide-on-focus: true) {
+    @if ($hide-on-focus) {
+        &:not(:focus-within)::before {
+            @include input-right-icon-show;
+        }
+    } @else {
+        &::before {
+            @include input-right-icon-show;
+        }
+    }
+}
+
+@mixin validation-icon-success($hide-on-focus: true) {
+    @if ($hide-on-focus) {
+        &:not(:focus-within)::after {
+            @include input-right-icon-show;
+        }
+    } @else {
+        &::after {
+            @include input-right-icon-show;
+        }
+    }
+}
+
+@mixin input-spinner {
+    background: url("../assets/images/loading.svg") no-repeat center center /20px 20px;
+    animation: loading-animation 1s linear infinite paused;
+}
+
+@mixin input-spinner-start {
+    animation-play-state: running;
+}
+
+@keyframes loading-animation {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

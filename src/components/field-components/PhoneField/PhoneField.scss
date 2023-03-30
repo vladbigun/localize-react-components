@@ -1,0 +1,46 @@
+@import "../../../styles/fonts";
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+.lcz-phone-field__add-info {
+    margin-top: 10px;
+
+    @include november-hebrew(12px);
+    line-height: 140%;
+
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.lcz-phone-field__add-info-email {
+    color: var(--logo-blue);
+    font-weight: bold;
+    display: inline;
+
+    @include mobile {
+        display: block;
+    }
+}
+
+.lcz-phone-field__add-info-message1 {
+    color: var(--salmon-darkest);
+    display: inline;
+    margin-left: 4px;
+
+    @include mobile {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+.lcz-phone-field__add-info-message2 {
+    color: var(--salmon-darkest);
+    display: inline;
+    margin-left: 4px;
+
+    @include mobile {
+        display: block;
+        margin-left: 0;
+    }
+}
